@@ -20,6 +20,6 @@ For parsing Old Bailey trial data.
 # Return a dataframe with parsed trial data.
 xml_address <- "https://www.oldbaileyonline.org/obapi/text?div=t17690112-9"
 parsed_trial <- parse_trials(xml_address)
-head(trials)
+head(parsed_trial)
 
 }
