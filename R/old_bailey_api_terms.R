@@ -1,3 +1,4 @@
+#' @importFrom dplyr %>%
 #' @importFrom dplyr filter
 #' @importFrom stringr str_detect
 #' @noRd

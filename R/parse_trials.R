@@ -312,7 +312,7 @@ find_unique_speeches <- function(old_bailey_df) {
   
   return(list_speech_id) }
 
-
+#' @importFrom dplyr %>%
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #' @importFrom dplyr group_by
