@@ -225,7 +225,7 @@ BibTeX:
 
 ```
 @Manual{,
-  title = {usdoj: For Accessing U.S. Department of Justice (DOJ) Open Data},
+  title = {oldbailey: For Accessing The Old Bailey Open Data.},
   author = {Steph Buongiorno},
   year = {2023},
   note = {https://github.com/stephbuon/oldbailey,
