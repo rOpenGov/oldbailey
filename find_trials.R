@@ -65,19 +65,19 @@ find_trials <- function(n_results = "all", cat = NA, term = NA) {
       
       page_hits <- str_split(data$hits, " ")
       
-      total_hits <- page_hits } # loop appends to this list 
-    
-    while(n_results - return_count > 0 & n_results > 500) {
-      n_results <- n_results - return_count
+      total_hits <- page_hits  # loop appends to this list 
       
-      raw_data <- GET(paste0(base_url, term_api_pattern, "&count=", return_count, "&start=", start))
-      data <- fromJSON(rawToChar(raw_data$content), flatten = TRUE) 
-      Sys.sleep(.2)
+      while(n_results - return_count > 0 & n_results > 500) {
+        n_results <- n_results - return_count
+        
+        raw_data <- GET(paste0(base_url, term_api_pattern, "&count=", return_count, "&start=", start))
+        data <- fromJSON(rawToChar(raw_data$content), flatten = TRUE) 
+        Sys.sleep(.2)
       
-      page_hits <- str_split(data$hits, " ")
-      total_hits <- append(total_hits, page_hits) }
+        page_hits <- str_split(data$hits, " ")
+        total_hits <- append(total_hits, page_hits) } }
     
-    if(n_results < return_count) {
+    if(n_results <= return_count) {
       raw_data <- GET(paste0(base_url, term_api_pattern, "&count=", n_results, "&start=", start))
       data <- fromJSON(rawToChar(raw_data$content), flatten = TRUE)
       Sys.sleep(.2)
@@ -90,5 +90,5 @@ find_trials <- function(n_results = "all", cat = NA, term = NA) {
   
   return(xml_addresses) }
   
-#xml_address <- find_trials(n_results = 1000)
+xml_address <- find_trials(n_results = 520)
   
