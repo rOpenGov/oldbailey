@@ -8,6 +8,7 @@ xml_address(
 }
 \arguments{
 \item{xml_address}{One or more XML addresses. A single XML address can be passed as a string, or numerous XML addresses can be passed as a list.}
+}
 
 \value{
 Dataframe containing API pull of parsed Old Bailey Trials.

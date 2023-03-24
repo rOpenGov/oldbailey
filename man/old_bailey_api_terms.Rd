@@ -8,6 +8,7 @@ old_bailey_api_terms(
 }
 \arguments{
 \item{old_bailey_api_terms}{Return a list of terms corresponding to a category of crime. By default, the terms for all categories are returned.}
+}
 
 \value{
 Dataframe containing API pull of terms and their categories.

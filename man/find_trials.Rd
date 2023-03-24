@@ -14,6 +14,7 @@ find_terms(
 \item{cat}{Find trials pertaining to a category. (optional).}
 
 \item{term}{Find trials pertaining to a term. (optional).}
+}
 
 \value{
 Dataframe containing API pull of XML addresses for Old Bailey Trials corresponding with the search criteria.
