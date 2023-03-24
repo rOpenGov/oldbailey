@@ -450,15 +450,3 @@ parse_trials <- function(xml_address) {
   out <- bind_rows(out, cleaned_df) }
   return(out) }
 
-
-# keep these: 
-#xml_address <- "https://www.oldbaileyonline.org/obapi/text?div=t17690112-9" # most important 
-#xml_address_2 <- "https://www.oldbaileyonline.org/obapi/text?div=t18820227-362"
-#xml_address <- "https://www.oldbaileyonline.org/obapi/text?div=t18820227-379"
-#xml_address <- "https://www.oldbaileyonline.org/obapi/text?div=t17840114-77"
-
-xml_address <- "https://www.oldbaileyonline.org/obapi/text?div=t16781211e-10"
-
-#test <- c(xml_address, xml_address_2)
-
-a <- parse_trials(xml_address)
