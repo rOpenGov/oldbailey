@@ -8,10 +8,10 @@ oldbailey fetches historical trial data from the Old Bailey API (April 13, 1674 
 - Victim Name: The name(s) of the victim(s).
 - Victim Gender: The recorded gender(s) of the victim(s).
 - Crime Location: The location(s) where the crime took place.
-- Offence Category: The Old Bailey uses eight high-level categories of crime: "breaking peace," "damage," "deception," "kill," "miscellaneous," "royal offences," "sexual," "theft," and "violent theft." 
-- Offence Subcategory: For narrowing the high-level category. The Old Bailey uses [fifty-six subcategories](#crime-subcategories) of crime. 
+- Offense Category: The Old Bailey uses eight high-level categories of crime: "breaking peace," "damage," "deception," "kill," "miscellaneous," "royal offences," "sexual," "theft," and "violent theft." 
+- Offense Subcategory: For narrowing the high-level category. The Old Bailey uses [fifty-six subcategories](#crime-subcategories) of crime. 
 - Punishment Category: The Old Bailey uses five categories of punishment: "corporal," "death," "imprison," "misc. punishment," "no punishment," and "transport." 
-- Punishment Subcategory: For narrowing the punishment category. The Old Bailey uses [twenty-six subcategories](#punishment-subcategories) of punihsment. 
+- Punishment Subcategory: For narrowing the punishment category. The Old Bailey uses [twenty-six subcategories](#punishment-subcategories) of punishment. 
 - Verdict: Guilt or not guilty.
 - Speech ID: A unique ID given to each speech, where a speech is considered a continuous recording until reaching a new speaker. The Speech ID starts at 0 for every trial.
 - Speaker Name: The first-person speaker of the written trial record. 
@@ -33,7 +33,7 @@ install.packages("oldbailey")
 
 ## Return Old Bailey Trials in Two Steps
 
-1. Use `find_trials()` to return a list of XML addresses for the trials coresponding to the search parameters. By default, `find_trials()` will return the addresses for all 197,752 trials. 
+1. Use `find_trials()` to return a list of XML addresses for the trials corresponding to the search parameters. By default, `find_trials()` will return the addresses for all 197,752 trials. 
 
 ```
 xml_addresses <- find_trials() 
@@ -73,10 +73,10 @@ parse_trials(find_trials(n_results = 15, cat = "offcat", term = "deception"))
 
 Old Bailey only recognizes specific terms in relation to a category. Use `old_bailey_api_terms()` to see every possible term and its category name.
 
-If you know the category name, you can supply it to `old_bailey_api_terms()` and see every term that belongs to it. Below is a list of all the categories recongized by Old Bailey: 
+If you know the category name, you can supply it to `old_bailey_api_terms()` and see every term that belongs to it. Below is a list of all the categories recognized by Old Bailey: 
 
 - `defgen` - Defence Gender
-- `offcat` - Offence Category
+- `offcat` - Offense Category
 - `offsubcat` - Offencive Subcategory
 - `vicgen` - Victim Gender
 - `vercat` - Verdict Category 
@@ -103,7 +103,7 @@ old_bailey_api_terms(cat = c("defgen", "offcat"))
  6 offcat select deception    
  7 offcat select kill         
  8 offcat select miscellaneous
- 9 offcat select royalOffences
+ 9 offcat select royalOffenses
 10 offcat select sexual       
 11 offcat select theft        
 12 offcat select violentTheft 
@@ -116,7 +116,7 @@ old_bailey_api_terms(cat = c("defgen", "offcat"))
 - (optional) `cat`: The term's category.
 - (optional) `term`: The term itself. 
 
-Note: "cat" and "term" must be specified together. (In otherwords, a category cannot be specified without a term, and vice-versa.)
+Note: "cat" and "term" must be specified together. (In other words, a category cannot be specified without a term, and vice-versa.)
 
 `parse_trials()`
 - (required) `xml_address`: One or more XML addresses.  
@@ -138,14 +138,14 @@ The XML parser handles issues with the XML tags while adding valuable metadata t
 - Barratry
 - Bigamy
 - Burglary
-- Coining Offences
+- Coining Offenses
 - Concealing a Birth
 - Conspiracy
 - Embezzlement
 - Extortion
 - Forgery
 - Fraud
-- Game Law Offence
+- Game Law Offense
 - Grand Larceny
 - Habitual Criminal
 - Highway Robbery
@@ -168,7 +168,7 @@ The XML parser handles issues with the XML tags while adding valuable metadata t
 - Pocketpicking
 - Rape
 - Receiving
-- Religious Offences
+- Religious Offenses
 - Return from Transportation
 - Riot
 - Robbery
@@ -179,7 +179,7 @@ The XML parser handles issues with the XML tags while adding valuable metadata t
 - Simple Larceny 
 - Sodomy
 - Stealing from Master
-- Tax Offences
+- Tax Offenses
 - Theft from Place
 - Threatening Behaviour
 - Treason
@@ -225,7 +225,7 @@ BibTeX:
 
 ```
 @Manual{,
-  title = {usdoj: For Accessing U.S. Department of Justice (DOJ) Open Data},
+  title = {oldbailey: For Accessing The Old Bailey Open Data.},
   author = {Steph Buongiorno},
   year = {2023},
   note = {https://github.com/stephbuon/oldbailey,
