@@ -31,6 +31,17 @@ Install from CRAN: (forthcoming)
 install.packages("oldbailey")
 ```
 
+Install from the [rOpenGov universe](https://ropengov.r-universe.dev/ui#builds):
+```
+# Enable repository from ropengov
+options(repos = c(
+  ropengov = 'https://ropengov.r-universe.dev',
+  CRAN = 'https://cloud.r-project.org'))
+  
+# Download and install oldbailey
+install.packages("oldbailey")
+```
+
 ## Return Old Bailey Trials in Two Steps
 
 1. Use `find_trials()` to return a list of XML addresses for the trials coresponding to the search parameters. By default, `find_trials()` will return the addresses for all 197,752 trials. 
