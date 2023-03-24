@@ -373,6 +373,8 @@ clean_returned_trial <- function(xml_address,
   
   collapsed_old_bailey_df <- left_join(unique_speakers, collapsed_body_text, by = "speech_id")
   
+  
+  
   old_bailey_df_and_metadata <- collapsed_old_bailey_df %>%
     mutate("xml_address" = xml_address,
            "trial_account_id" = trial_account_id,
@@ -414,29 +416,24 @@ clean_returned_trial <- function(xml_address,
 #' @importFrom dplyr bind_rows
 #' @export
 parse_trials <- function(xml_address) {
-  #postprocess_remove_symbols <- "<.*?>" #c("</placeName>"), "<type=\".*\">?")
-  
   n_xml_addresses <- length(xml_address)
   cycle <- 0
   
   #all_parsed_xml <- list()
   out <- data.frame()
-  detect_data_type <- class(xml_address)
   
-  if(detect_data_type == "character") {
-    xml_address <- as.list(xml_address)
-  }
-  
-  for(x in xml_address) {
+  for(xa in xml_address) {
     cycle <- cycle + 1
   
   # flat_html <- readLines(con = xml_address)
   # if(identical(flat_html, character(0)) == TRUE) {
   #   stop("Failed to resolve host name. Are the address(es) correct") }
   
-  newer_tagging_convention <- detect_tagging_convention(x)
-  parsed_xml <- xml_parser(x, newer_tagging_convention, n_xml_addresses, cycle) 
+  newer_tagging_convention <- detect_tagging_convention(xa)
+  parsed_xml <- xml_parser(xa, newer_tagging_convention, n_xml_addresses, cycle) 
   Sys.sleep(.2)
+  
+  #return(parsed_xml)
   
   # if(identical(all_parsed_xml, list()) == TRUE) {
   #   all_parsed_xml <- append(all_parsed_xml, parsed_xml) }
@@ -461,14 +458,16 @@ parse_trials <- function(xml_address) {
                                      victim_gender <- parsed_xml[[14]],
                                      punishment_category <- parsed_xml[[15]],
                                      punishment_subcategory <- parsed_xml[[16]])
+
   
-  # for(symbol in postprocess_remove_symbols) {
-  #   cleaned_df <- cleaned_df %>%
-  #    cleaned_df$body_text <- str_replace(cleaned_df$body_text, postprocess_remove_symbols, "") #) }
   
-  cleaned_df$body_text <- strip_tags(cleaned_df$body_text)
+#  cleaned_df$body_text <- strip_tags(cleaned_df$body_text)
+  
+  cleaned_df$body_text <- str_replace_all(cleaned_df$body_text, "<.*?>", "")
   
   cleaned_df[] <- lapply(cleaned_df, str_trim)
   
+  return(cleaned_df)
+
   out <- bind_rows(out, cleaned_df) }
   return(out) }
