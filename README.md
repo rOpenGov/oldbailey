@@ -70,7 +70,7 @@ Users can also search for trials that contain key terms. This requires the user 
 find_trials(cat = "offcat", term = "deception")
 ```
 
-Several categories and terms can be provided. 
+Several categories and terms can be provided. Note: this causes the API to return trials that are tagged as BOTH "deception" and "theft." It does not return trials that are tagged just "deception" and just "theft." 
 
 ```
 find_trials(n_results = 200, cat = c("offcat", "offcat"), term = c("deception", "theft"))
