@@ -1,6 +1,6 @@
-\name{parse_trials}
-\alias{parse_trials}
-\title{Parse Old Bailey Trials}
+\name{old_bailey_api_terms}
+\alias{old_bailey_api_terms}
+\title{View Old Bailey API Terms}
 \usage{
 old_bailey_api_terms(
   cat = NULL
