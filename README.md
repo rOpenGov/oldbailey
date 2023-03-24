@@ -116,8 +116,8 @@ old_bailey_api_terms(cat = c("defgen", "offcat"))
 | Argument | Description | 
 | ------------- | ------------- |
 | `n_results` | Any positive number. To return all results, keep this empty or pass "all." (optional). |
-| `cat` | The term's category. (optional). |
-| `term` | The term itself. (optional). |
+| `cat` | Find trials pertaining to a category. (optional). |
+| `term` | Find trials pertaining to a term. (optional). |
 
 Note: "cat" and "term" must be specified together. (In otherwords, a category cannot be specified without a term, and vice-versa.)
 
@@ -131,7 +131,7 @@ Note: "cat" and "term" must be specified together. (In otherwords, a category ca
 
 | Argument | Description | 
 | ------------- | ------------- |
-| `cat` | Specify one or more categories. (optional). |
+| `cat` | Specify results for one or more categories. (optional). |
 
 ## Parsing Old Bailey XML
 
