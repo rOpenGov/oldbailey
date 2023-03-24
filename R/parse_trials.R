@@ -337,6 +337,23 @@ clean_returned_trial <- function(xml_address,
                                  list_punishment_subcategory) {
   # make and export data frame with relevant fields
   
+  # Visible bindings for global variables 
+  speech_id <- ""
+  speaker_name <- ""
+  body_text <- ""
+  defendant_name <- ""
+  defendant_gender <- ""
+  victim_name <- ""
+  victim_gender <- ""
+  crime_location <- ""
+  offence_category <- ""
+  offence_subcategory <- ""
+  punishment_category <- ""
+  punishment_subcategory <- ""
+  verdict <- ""
+  verdict_subcategory <- ""
+  ########
+  
   old_bailey_df <- data.frame(speaker_name = unlist(list_speaker_name), body_text = unlist(list_body_text))
   
   list_speech_id <- find_unique_speeches(old_bailey_df)
@@ -404,6 +421,12 @@ parse_trials <- function(xml_address) {
   
   #all_parsed_xml <- list()
   out <- data.frame()
+  detect_data_type <- class(xml_address)
+  
+  if(detect_data_type == "character") {
+    xml_address <- as.list(xml_address)
+  }
+  
   for(x in xml_address) {
     cycle <- cycle + 1
   
@@ -449,4 +472,3 @@ parse_trials <- function(xml_address) {
   
   out <- bind_rows(out, cleaned_df) }
   return(out) }
-

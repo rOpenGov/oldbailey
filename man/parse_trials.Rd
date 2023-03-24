@@ -2,8 +2,8 @@
 \alias{parse_trials}
 \title{Parse Old Bailey Trials}
 \usage{
-xml_address(
-  xml_address = ""
+parse_trials(
+  xml_address
   )
 }
 \arguments{
@@ -17,8 +17,9 @@ Dataframe containing API pull of parsed Old Bailey Trials.
 For parsing Old Bailey trial data.
 }
 \examples{
-# Return a dataframe with 50 parsed trials.
-trials <- parse_trials(find_trials(n_results = 50))
+# Return a dataframe with parsed trial data.
+xml_address <- "https://www.oldbaileyonline.org/obapi/text?div=t17690112-9"
+parsed_trial <- parse_trials(xml_address)
 head(trials)
 
 }

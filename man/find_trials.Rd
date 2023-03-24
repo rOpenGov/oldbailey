@@ -2,7 +2,7 @@
 \alias{find_trials}
 \title{Find Old Bailey Trials}
 \usage{
-find_terms(
+find_trials(
   n_results = "all",
   cat = NA,
   term = NA
@@ -23,11 +23,11 @@ Dataframe containing API pull of XML addresses for Old Bailey Trials correspondi
 For finding Old Bailey trial data.
 }
 \examples{
-# Return a dataframe with 50 trials.
-trials <- find_trials(n_results = 50)
+# Return a dataframe with 5 trials.
+trials <- find_trials(n_results = 5)
 head(trials)
 
-# Return a dataframe with 50 trials on deception. 
-trials <- find_trials(cat = "offcat", term = "deception")
+# Return a dataframe with 5 trials on deception. 
+trials <- find_trials(n_results = 5, cat = "offcat", term = "deception")
 head(trials)
 }
