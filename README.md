@@ -111,7 +111,7 @@ old_bailey_api_terms(cat = c("defgen", "offcat"))
 
 ### Usage
 
-`find_trials()`
+**find_trials()**
 
 | Argument | Description | 
 | ------------- | ------------- |
@@ -121,13 +121,13 @@ old_bailey_api_terms(cat = c("defgen", "offcat"))
 
 Note: "cat" and "term" must be specified together. (In otherwords, a category cannot be specified without a term, and vice-versa.)
 
-`parse_trials()`
+**parse_trials()**
 
 | Argument | Description | 
 | ------------- | ------------- |
 | `xml_address` | One or more XML addresses. |
 
-`old_bailey_api_terms()`
+**old_bailey_api_terms()**
 
 | Argument | Description | 
 | ------------- | ------------- |
