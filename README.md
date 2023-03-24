@@ -23,6 +23,14 @@ Note: Not all trials mention the proper names of defendants or victims, or conta
 
 Optional parameters allow users to specify the number of results, the dates of the trials, and whether they contain key terms.
 
+## Install
+
+Install from CRAN: (forthcoming)
+
+```
+install.packages("oldbailey")
+```
+
 ## Return Old Bailey Trials in Two Steps
 
 1. Use `find_trials()` to return a list of XML addresses for the trials coresponding to the search parameters. By default, `find_trials()` will return the addresses for all 197,752 trials. 
