@@ -394,7 +394,7 @@ clean_returned_trial <- function(xml_address,
   
   return(old_bailey_df_and_metadata) }
 
-
+#' @importFrom bind_rows
 #' @export
 parse_trials <- function(xml_address) {
   #postprocess_remove_symbols <- "<.*?>" #c("</placeName>"), "<type=\".*\">?")
