@@ -90,5 +90,5 @@ find_trials <- function(n_results = "all", cat = NA, term = NA) {
   
   return(xml_addresses) }
   
-xml_address <- find_trials(n_results = 520)
+#xml_address <- find_trials(n_results = 520)
   
