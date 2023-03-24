@@ -112,17 +112,26 @@ old_bailey_api_terms(cat = c("defgen", "offcat"))
 ### Usage
 
 `find_trials()`
-- (optional) `n_results`: Any positive number. Keep empty or pass "all" to return all results. 
-- (optional) `cat`: The term's category.
-- (optional) `term`: The term itself. 
+
+| Argument | Description | 
+| ------------- | ------------- |
+| `n_results` | Any positive number. To return all results, keep this empty or pass "all." (optional). |
+| `cat` | The term's category. (optional). |
+| `term` | The term itself. (optional). |
 
 Note: "cat" and "term" must be specified together. (In otherwords, a category cannot be specified without a term, and vice-versa.)
 
 `parse_trials()`
-- (required) `xml_address`: One or more XML addresses.  
+
+| Argument | Description | 
+| ------------- | ------------- |
+| `xml_address` | One or more XML addresses. |
 
 `old_bailey_api_terms()`
-- (optional) `cat`: Specify one or more categories 
+
+| Argument | Description | 
+| ------------- | ------------- |
+| `cat` | Specify one or more categories. (optional). |
 
 ## Parsing Old Bailey XML
 
