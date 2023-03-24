@@ -13,7 +13,7 @@ term_handler <- function(cat, term) {
 #' @importFrom httr GET
 #' @importFrom jsonlite fromJSON
 #' @importFrom stringr str_split
-#' @noRd
+#' @export
 find_trials <- function(n_results = "all", cat = NA, term = NA) {
   # comments
   
