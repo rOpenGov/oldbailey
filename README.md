@@ -253,6 +253,8 @@ https://ropengov.github.io/oldbailey/, https://github.com/rOpenGov/oldbailey},
 }
 ```
 
+See [my website](https://stephbuon.github.io/) for more projects.
+
 **Disclaimer**
 
 This package is not officially related to or endorsed by Old Bailey Online or the Government of the United Kingdom. 
