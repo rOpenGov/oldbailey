@@ -466,8 +466,6 @@ parse_trials <- function(xml_address) {
   cleaned_df$body_text <- str_replace_all(cleaned_df$body_text, "<.*?>", "")
   
   cleaned_df[] <- lapply(cleaned_df, str_trim)
-  
-  return(cleaned_df)
 
   out <- bind_rows(out, cleaned_df) }
   return(out) }
