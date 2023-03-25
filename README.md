@@ -239,7 +239,7 @@ The XML parser handles issues with the XML tags while adding valuable metadata t
 
 Please cite the package as follows: 
 
-Buongiorno S (2023). oldbailey: For Accessing The Old Bailey Open Data. https://github.com/stephbuon/usdoj, https://ropengov.github.io/usdoj/, https://github.com/rOpenGov/usdoj.
+Buongiorno S (2023). oldbailey: For Accessing The Old Bailey Open Data. https://github.com/stephbuon/oldbailey, https://ropengov.github.io/oldbailey/, https://github.com/rOpenGov/oldbailey.
 
 BibTeX: 
 
