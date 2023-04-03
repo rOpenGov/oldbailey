@@ -1,4 +1,4 @@
-# oldbailey: Accessing Old Bailey API Data
+# oldbailey: Accessing The Old Bailey Historical Criminal Trials
 
 oldbailey fetches historical trial data from the Old Bailey API (April 13, 1674 - April 1, 1913). It [parses and resolves](#parsing-old-bailey-xml) ambiguous and inconsistent XML while adding valuable metadata, such as the name of the first-person speaker. It returns an analysis-ready data frame with fields for: 
 
