@@ -1,5 +1,5 @@
 Package: oldbailey
-Title: For Accessing The Old Bailey Historical Criminal Trials
+Title: For Accessing the Old Bailey Open Data
 Version: 1.0.0
 Authors@R: 
   person("Steph", "Buongiorno", , "steph.buon@gmail.com", role = c("aut", "cre"),

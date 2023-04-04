@@ -1,6 +1,5 @@
 #' @noRd
 detect_tagging_convention <- function(xml_address) {
-  
   newer_tagging_convention <- FALSE
   
   flat_html <- readLines(con = xml_address)
@@ -104,6 +103,8 @@ xml_parser <- function(xml_address, newer_tagging_convention, n_xml_addresses, c
                                  "<join(.*)join>",
                                  "<xptr(.*)>")
   
+  #for(line in flat_html) {
+  #  newer_tagging_convention <- detect_tagging_convention(line) }
   
   # start parsing 
   for(line in flat_html) {
@@ -172,8 +173,9 @@ xml_parser <- function(xml_address, newer_tagging_convention, n_xml_addresses, c
     if(grepl("<persName", stripped_line)) {
       # if the text is a person name tag but not the defendant introduced in the opening words
       if(grepl("type=\"defendantName\"|type=\"victimName\"", stripped_line) == FALSE) {
-        grab_name <- TRUE 
-        speaker_name_id <- str_match(stripped_line, "(?<=id=\").*(?= type)") } 
+        grab_name <- TRUE
+        #speaker_name_id <- str_match(stripped_line, "(?<=id=\").*(?= type)")
+        speaker_name_id <- str_match(stripped_line, "(?<=id=\").*(?=\")") } 
       # if the text is a person name tag and is the defendant introduced in the opening words
       if(grepl("type=\"defendantName\"", stripped_line) == TRUE){
         grab_defendant_name <- TRUE }
@@ -237,10 +239,9 @@ xml_parser <- function(xml_address, newer_tagging_convention, n_xml_addresses, c
         grab_name <- FALSE } } 
     
     if(newer_tagging_convention == TRUE) {
-      if(grepl(speaker_name_id, stripped_line) == FALSE) {
-        grab_name <- FALSE } }
+        if(grepl(speaker_name_id, stripped_line)) {
+          grab_name <- FALSE } }
 
-  
     # if the text is a body paragraph or name
     if(grepl("^<", stripped_line) == FALSE) { 
     
@@ -429,9 +430,15 @@ parse_trials <- function(xml_address) {
   # if(identical(flat_html, character(0)) == TRUE) {
   #   stop("Failed to resolve host name. Are the address(es) correct") }
   
-  newer_tagging_convention <- detect_tagging_convention(xa)
-  parsed_xml <- xml_parser(xa, newer_tagging_convention, n_xml_addresses, cycle) 
-  Sys.sleep(.2)
+    newer_tagging_convention <- detect_tagging_convention(xa) 
+    
+    parsed_xml <- tryCatch(expr = { xml_parser(xa, newer_tagging_convention, n_xml_addresses, cycle) },
+                           warning = function(w) {
+                             #print(paste0("Failed at ", xa))
+                             Sys.sleep(300)
+                             xml_parser(xa, newer_tagging_convention, n_xml_addresses, cycle) } )
+    
+    Sys.sleep(.2)
   
   #return(parsed_xml)
   
@@ -442,6 +449,12 @@ parse_trials <- function(xml_address) {
   #   for(i in cols) {
   #     all_parsed_xml[[i]] <- append(all_parsed_xml[[i]], list(parsed_xml[[i]])) } } }
   
+  
+  xml_index <- 1:16
+  for(index in xml_index) {
+    if(length(parsed_xml[[index]]) == 0) {
+      parsed_xml[[index]] <- "" } }
+    
   cleaned_df <- clean_returned_trial(xml_address <- parsed_xml[[1]],
                                      list_body_text <- parsed_xml[[2]],
                                      list_speaker_name <- parsed_xml[[3]],
