@@ -5,8 +5,8 @@ oldbailey fetches historical trial data from the Old Bailey API (April 13, 1674 
 - Trail Account ID: The unique ID assigned to a trial.
 - Defendant Name: The name of the defendant(s).
 - Defendant Gender: The recorded gender(s) of the defendant(s).
-- Victim Name: The name(s) of the victim(s).
-- Victim Gender: The recorded gender(s) of the victim(s).
+- Victim Name: The name(s) of the victim(s) if present. Some trials never mention the victim.
+- Victim Gender: The recorded gender(s) of the victim(s) if present.
 - Crime Location: The location(s) where the crime took place.
 - Offence Category: The Old Bailey uses eight high-level categories of crime: "breaking peace," "damage," "deception," "kill," "miscellaneous," "royal offences," "sexual," "theft," and "violent theft." 
 - Offence Subcategory: For narrowing the high-level category. The Old Bailey uses [fifty-six subcategories](#crime-subcategories) of crime. 
