@@ -1,5 +1,9 @@
 # oldbailey: Accessing The Old Bailey Historical Criminal Trials
 
+If this project helped, consider supporting it:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00)](https://buymeacoffee.com/stephbuon)
+
 oldbailey fetches historical trial data from the Old Bailey API (April 13, 1674 - April 1, 1913). It [parses and resolves](#parsing-old-bailey-xml) ambiguous and inconsistent XML while adding valuable metadata, such as the name of the first-person speaker. It returns an analysis-ready data frame with fields for: 
 
 - Trail Account ID: The unique ID assigned to a trial.
