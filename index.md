@@ -151,11 +151,11 @@ defendant gender) and “offcat” (for offence category).
 
 **find_trials()**
 
-| Argument    | Description                                                                            |
-|-------------|----------------------------------------------------------------------------------------|
+| Argument | Description |
+|----|----|
 | `n_results` | Any positive number. To return all results, keep this empty or pass “all.” (optional). |
-| `cat`       | Find trials pertaining to a category. (optional).                                      |
-| `term`      | Find trials pertaining to a term. (optional).                                          |
+| `cat` | Find trials pertaining to a category. (optional). |
+| `term` | Find trials pertaining to a term. (optional). |
 
 Note: “cat” and “term” must be specified together. (In otherwords, a
 category cannot be specified without a term, and vice-versa.)
